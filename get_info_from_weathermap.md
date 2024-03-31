@@ -41,3 +41,4 @@ pprint.pprint(response, width=100)
 
 
 ```
+# Make a full code of getting data about weather(temp, rain, clouds, wind) hourly, daily, current
