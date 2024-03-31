@@ -38,7 +38,7 @@ exclude = input("Enter an option(current, hourly, daily): ")
 response = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q={city}&exclude={exclude}&appid={API_KEY}").json()
 
 pprint.pprint(response, width=100)
-
+Temp = response['main']['temp']
 
 ```
 # Make a full code of getting data about weather(temp, rain, clouds, wind) hourly, daily, current
