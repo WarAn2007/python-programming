@@ -61,9 +61,58 @@ print(thislist)   #Output: ['apple', 'banana', 'watermelon', 'cherry']    Size i
 
 ```
 ## 3. Add and Remove items
+```py
+#Adding items 2 methods
+#Method 1. Add to right side of list
+mylist = [1,2,3,4]
+mylist.append(5)  # now mylist = [1,2,3,4,5]
+
+#Method 2. Inserting to some index
+mylist = [1,2,3,4]
+mylist.insert(1, "cherry") # 1 shows index at which it would be located. Output: [1,"cherry",2,3,4]
+
+
+#Removing items 4 methods
+#Method 1. Remove by name(variable)
+mylist = ["cherry", "apple", "cherry" , "banana"]
+mylist.remove("cherry) # remove func deletes first appeared variable in list Output: ["apple", "cherry", "banana"]
+
+#Method 2. Remove by Index
+mylist = [1,2,3,1,4,2,1]
+mylist.pop(3) #Deletes item at index 3
+
+#Method 3. Delete function
+mylist = [1,2,3,1,4,2,1]
+del mylist[3] # Deletes item under index 3
+
+del mylist   # Deletes list with all items completely
+
+#Method 4. Clear function
+mylist = [1,2,3,1,4,2,1]
+mylist.clear()  # Clears list from all items (leaves empty list)
+```
+
 ## 4. Loops and Comprehesions
 ## 5. Sorting
 ## 6. Join lists
+```py
+#Joining is the easiest part. There are 3 ways to join lists without outer libraries
+list1 = [1,2,3,4]
+list2 = ['cherry', 'banana','apple']
+
+# 1 Plus Method 
+x = list1 + list2
+print(x) #output: [1,2,3,4,'cherry', 'banana','apple']
+
+#2 For loop Method
+for i in list2:
+  list1.append(x)
+print(list1) #output: [1,2,3,4,'cherry', 'banana','apple']
+
+#3 Extend Method
+list1.extend(list2)
+print(list1) #output: [1,2,3,4,'cherry', 'banana','apple']
+```
 ## 7. Methods
 
 
