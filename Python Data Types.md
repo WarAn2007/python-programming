@@ -183,10 +183,10 @@ reverse()     Reverses the order of the list
 sort()        Sorts the list
 ```
 # Tuple
-# 1. A tuple is a collection which is ordered and unchangeable
-# 2. Access and Change of Items
+A tuple is a collection which is ordered and unchangeable
+# 1. Access and Change of Items
 Access is same as in list, by index. We can do both positive and negative searches.
-# 3. Add and Remove Items
+# 2. Add and Remove Items
 Since we cannot change tuple collecton, we need to convert it to list to add or remove items by methods of list
 ```py
 mytuple = (5,6,4,3,2,1)
@@ -199,7 +199,7 @@ tuple(list(mytuple).append(7))
 3. Then we convert it again to tuple tuple(...)
 """
 ```
-# 4. Unpacking
+# 3. Unpacking
 Unpacking here is like refering items inside of tuple to some groups
 ```py
 mytuple = ('apple','watermelon','banana')
@@ -216,7 +216,7 @@ mytuple = ('cucumber','banana','apple','watermelon','tomato')
 print(red,' ', green, ' ', yellow)
 #Output:   tomato cucumber ['banana','apple', 'watermelon']
 ```
-# 5. Join Tuples
+# 4. Join Tuples
 ```py
 tuple1 = ("a", "b" , "c")
 tuple2 = (1, 2, 3)
@@ -230,7 +230,7 @@ tuple1 = ("a", "b" , "c")
 tuple1 = tuple1 * 2
 print(tuple1) #Output: ["a", "b" , "c","a", "b" , "c"]
 ```
-# 6. Methods
+# 5. Methods
 ```txt
 Mostly same with list methods excluding add and remove methods
 ```
