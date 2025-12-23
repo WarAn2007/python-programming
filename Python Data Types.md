@@ -1,5 +1,5 @@
 # List 
-## 1. Data type list contains different elements and differnt data types under specific index. List can contain same elements as well but in differnet index
+## 1. list collenction can contain same elements but in differnet index
 ```py
 list1 = [123,321,123,'a','b', [1,2,3]]
 """
@@ -38,7 +38,7 @@ thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
 print(thislist[-4:-1]) #output: ['orange', 'kiwi', 'melon']
 
 ```
-###2.2 Changing by Index
+### 2.2 Changing by Index
 ```py
 thislist = ["apple", "banana", "cherry"]
 thislist[1] = "blackcurrant"
@@ -52,7 +52,7 @@ thislist = ["apple", "banana", "cherry"]
 thislist[1:3] = ["watermelon"]
 print(thislist)  #Output: ['apple', 'watermelon']
 ```
-###2.3 Inserting
+### 2.3 Inserting
 ```py
 #Inserting is putting at specific index new item without removing items. In simple words it moves items and place at old index new item
 thislist = ["apple", "banana", "cherry"]
@@ -183,9 +183,70 @@ reverse()     Reverses the order of the list
 sort()        Sorts the list
 ```
 # Tuple
+# 1. A tuple is a collection which is ordered and unchangeable
+# 2. Access and Change of Items
+Access is same as in list, by index. We can do both positive and negative searches.
+# 3. Add and Remove Items
+Since we cannot change tuple collecton, we need to convert it to list to add or remove items by methods of list
+```py
+mytuple = (5,6,4,3,2,1)
+mytuple.remove() # Error
+tuple(list(mytuple).remove(6))
+tuple(list(mytuple).append(7))
+"""
+1. We convert tuple to list list(mytuple), lets say in short it is "converted_tuple"
+2. Then from our 'list' we remove 6 converted_tuple.remove(6) OR add 7 converted_tuple.append(7)
+3. Then we convert it again to tuple tuple(...)
+"""
+```
+# 4. Unpacking
+Unpacking here is like refering items inside of tuple to some groups
+```py
+mytuple = ('apple','watermelon','banana')
+(green, red, yellow) = mytuple
+print(green,' ',red,' ',  yellow) #Output: apple watermelon banana
 
+mytuple = ('cucumber','banana','apple','watermelon','tomato')
+(green, yellow, *red) = mytuple # Asteriks (*) means choose all other that left to category 'red'
+print(red,' ', green, ' ', yellow)
+#Output:  ['apple', 'watermelon', 'tomato'] cucumber banana
+
+mytuple = ('cucumber','banana','apple','watermelon','tomato')
+(green, *yellow, red) = mytuple # With asteriks in this position compiler refers all items between first and last elements
+print(red,' ', green, ' ', yellow)
+#Output:   tomato cucumber ['banana','apple', 'watermelon']
+```
+# 5. Join Tuples
+```py
+tuple1 = ("a", "b" , "c")
+tuple2 = (1, 2, 3)
+
+tuple3 = tuple1 + tuple2
+print(tuple3)
+```
+## OR
+```py
+tuple1 = ("a", "b" , "c")
+tuple1 = tuple1 * 2
+print(tuple1) #Output: ["a", "b" , "c","a", "b" , "c"]
+```
+# 6. Methods
+```txt
+Mostly same with list methods excluding add and remove methods
+```
 # Set
+A set is a collection which is unordered, unchangeable*, and unindexed.
+Set items are unchangeable, but you can remove items and add new items.
+Sets cannot have two items with the same value
+```py
+set1 = {4.3,43,12,1.2,4.3, 1.2,1.2) # Is stored like set1 =set1 = {4.3,43,12,1.2)
+```
+True and 1 is considered the same value so set1 = {2,3,True, 1} becomes set1 = {2,3,True) 
+False and 0 is considered the same value so set1 = {2,3,False, 0} becomes set1 = {2,3,False) 
+# 1. Access
+```py
 
+```
 # Dictionary( Dict)
 
 # Array
