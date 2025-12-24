@@ -239,13 +239,44 @@ A set is a collection which is unordered, unchangeable*, and unindexed.
 Set items are unchangeable, but you can remove items and add new items.
 Sets cannot have two items with the same value
 ```py
-set1 = {4.3,43,12,1.2,4.3, 1.2,1.2) # Is stored like set1 =set1 = {4.3,43,12,1.2)
+set1 = {4.3,43,12,1.2,4.3, 1.2,1.2}
+"""
+Is stored like set1 =set1 = {4.3,43,12,1.2}
+But output is always random: {43,12,1.2,4.3}, another time {12, 1.2, 4.3,43}
+"""
 ```
 True and 1 is considered the same value so set1 = {2,3,True, 1} becomes set1 = {2,3,True) 
 False and 0 is considered the same value so set1 = {2,3,False, 0} becomes set1 = {2,3,False) 
 # 1. Access
 ```py
+thisset = {"apple", "banana", "cherry"}
+for x in thisset:
+  print(x)
 
+print("banana" in thisset) #True
+print("banana" not in thisset) #False
+```
+# 2. Add Set Items ☻
+```py
+thisset = {"apple", "banana", "cherry"}
+tropical = {"pineapple", "mango", "papaya"}
+
+thisset.update(tropical) # <- means thisset was enlarged with data of tropical
+
+# This actualy helps to avoid repeating words to do a list of all existing items, like:
+fruits = {}
+national = {...}
+tropical = {...}
+exotic = {...}
+fruit.update(national)
+fruit.update(tropical)
+fruit.update(exotic)
+print(fruit) # Will show all fruits without duplicates but without order 
+```
+OR simply use .add() method
+```py
+thisset = {2,3,4,5}
+thisset.add(9)
 ```
 # Dictionary( Dict)
 
