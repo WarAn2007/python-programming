@@ -276,7 +276,80 @@ print(fruit) # Will show all fruits without duplicates but without order
 OR simply use .add() method
 ```py
 thisset = {2,3,4,5}
-thisset.add(9)
+thisset.add(9) # thisset = {2,3,4,5,9}
+```
+# 3. Remove Set Items
+There are several ways to delete items
+## 1) Remove ( If items doesn't exist in set, compiler will raise an ERROR )
+```py
+thisset = {"apple", "banana", "cherry"}
+thisset.remove("watermelon") # ERROR
+thisset.remove("banana") # {'apple','cherry'}
+```
+## 2) Discard ( If items doesn't exist in set, compiler will NOT raise an ERROR )
+```py
+thisset = {"apple", "banana", "cherry"}
+thisset.discard("watermelon") # {'banana', 'cherry', 'apple'}
+thisset.discard("banana") # {'apple','cherry'}
+```
+## 3) Pop ( It is the way delete random item from set, because set is always unordered )
+```py
+thisset = {"apple", "banana", "cherry"}
+x = thisset.pop()
+print(x) # Shows removed item
+print(thisset) # Shows the set without deleted item
+```
+## 4) Clear ( Clears  set massive )
+```py
+thisset = {"apple", "banana", "cherry"}
+thisset.clear()
+```
+## 5) Del ( Deletes set massive )
+```py
+thisset = {"apple", "banana", "cherry"}
+del thisset
+```
+# 4. Join Sets
+## 1. Union, Update and operator | ( Joins two sets)
+#### ! Union function allows to join set with other massive types(list, tuple)                                !
+#### ! Update function doesn't save join of two sets into new one, instead it fulfills first set with another !
+#### ! Operator | allows to join multiple sets                                                                !
+```py
+thisset1 = {"apple", "banana", "cherry"}
+thisset2 = {3,2,4}
+union_method = thisset1.union(thisset2)
+operator_method = thisset1 | thisset2
+thisset1.update(thisset2)
+```
+## 2. Symmetric Difference ( This  method will keep only the elements that are NOT present in both sets )
+
+```py
+thisset1 = {"apple", "banana", "cherry"}
+thisset2 = {3,2,4, "apple"}
+set3 = thisset1.symmetric_difference(thisset2)
+set4 = thisset1 ^ thisset2
+print(set3) # {'banana', 'cherry',3,4,2}
+print(set4) # {'banana', 'cherry',3,4,2}
+```
+## 3. Intersection and & (This method will return a new set, that ONLY contains the items that are present in both sets )
+#### ! Operator & will show the save result but is able to hold multiple sets !
+```py
+thisset1 = {"apple", "banana", "cherry"}
+thisset2 = {3,2,4, "apple"}
+set3 = thisset1.intersection(thisset2)
+set4 = thisset1 & thisset2
+print(set3) # {'apple'}
+print(set4) # {'apple'}
+```
+## 4. Difference and - ( This method will return a new set that will contain only the items from the first set that are not present in the other set)
+#### ! Operator '-' will show the same result !
+```py
+thisset1 = {"apple", "banana", "cherry"}
+thisset2 = {3,2,4, "apple"}
+set3 = thisset1.difference(thisset2)
+set4 = thisset1 - thisset2
+print(set3) # {'banana', 'cherry'}
+print(set4) # {'banana', 'cherry'}
 ```
 # Dictionary( Dict)
 
