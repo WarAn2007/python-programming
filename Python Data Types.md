@@ -279,7 +279,6 @@ thisset = {2,3,4,5}
 thisset.add(9) # thisset = {2,3,4,5,9}
 ```
 # 3. Remove Set Items
-There are several ways to delete items
 ## 1) Remove ( If items doesn't exist in set, compiler will raise an ERROR )
 ```py
 thisset = {"apple", "banana", "cherry"}
@@ -310,7 +309,7 @@ thisset = {"apple", "banana", "cherry"}
 del thisset
 ```
 # 4. Join Sets
-## 1. Union, Update and operator | ( Joins two sets)
+## 1) Union, Update and operator | ( Joins two sets)
 #### ! Union function allows to join set with other massive types(list, tuple)                                !
 #### ! Update function doesn't save join of two sets into new one, instead it fulfills first set with another !
 #### ! Operator | allows to join multiple sets                                                                !
@@ -321,7 +320,7 @@ union_method = thisset1.union(thisset2)
 operator_method = thisset1 | thisset2
 thisset1.update(thisset2)
 ```
-## 2. Symmetric Difference ( This  method will keep only the elements that are NOT present in both sets )
+## 2) Symmetric Difference ( This  method will keep only the elements that are NOT present in both sets )
 
 ```py
 thisset1 = {"apple", "banana", "cherry"}
@@ -331,7 +330,7 @@ set4 = thisset1 ^ thisset2
 print(set3) # {'banana', 'cherry',3,4,2}
 print(set4) # {'banana', 'cherry',3,4,2}
 ```
-## 3. Intersection and & (This method will return a new set, that ONLY contains the items that are present in both sets )
+## 3) Intersection and & (This method will return a new set, that ONLY contains the items that are present in both sets )
 #### ! Operator & will show the save result but is able to hold multiple sets !
 ```py
 thisset1 = {"apple", "banana", "cherry"}
@@ -341,7 +340,7 @@ set4 = thisset1 & thisset2
 print(set3) # {'apple'}
 print(set4) # {'apple'}
 ```
-## 4. Difference and - ( This method will return a new set that will contain only the items from the first set that are not present in the other set)
+## 4) Difference and - ( This method will return a new set that will contain only the items from the first set that are not present in the other set)
 #### ! Operator '-' will show the same result !
 ```py
 thisset1 = {"apple", "banana", "cherry"}
@@ -350,6 +349,41 @@ set3 = thisset1.difference(thisset2)
 set4 = thisset1 - thisset2
 print(set3) # {'banana', 'cherry'}
 print(set4) # {'banana', 'cherry'}
+```
+# 5. Frozenset
+#### frozenset is an immutable version of a set. 
+#### Use the frozenset() constructor to create a frozenset from any iterable
+#### Being immutable means you cannot add or remove elements. However, frozensets support all non-mutating operations of sets.
+```txt
+METHODS             SHORTCUTS       MEANINGS
+copy()                            Returns a shallow copy	
+difference()             -	      Returns a new frozenset with the difference	
+intersection()           &	      Returns a new frozenset with the intersection	
+isdisjoint()                      Returns whether two frozensets have an intersection	
+issubset()               <= / <   Returns True if this frozenset is a (proper) subset of another	
+issuperset()             >= / >   Returns True if this frozenset is a (proper) superset of another	
+symmetric_difference()   ^        Returns a new frozenset with the symmetric differences	
+union()                  |        Returns a new frozenset containing the union
+```
+# 6. Methods
+```txt
+add()                            Adds an element to the set
+clear()                          Removes all the elements from the set
+copy()                           Returns a copy of the set
+difference()                     Returns a set containing the difference between two or more sets
+difference_update()              Removes the items in this set that are also included in another, specified set
+discard()                        Remove the specified item
+intersection()                   Returns a set, that is the intersection of two other sets
+intersection_update()            Removes the items in this set that are not present in other, specified set(s)
+isdisjoint()                     Returns whether two sets have a intersection or not
+issubset()                       Returns True if all items of this set is present in another set
+issuperset()                     Returns True if all items of another set is present in this set
+pop()                            Removes an element from the set
+remove()                         Removes the specified element
+symmetric_difference()           Returns a set with the symmetric differences of two sets
+symmetric_difference_update()    Inserts the symmetric differences from this set and another
+union()                          Return a set containing the union of sets
+update()                         Update the set with the union of this set and others
 ```
 # Dictionary( Dict)
 
