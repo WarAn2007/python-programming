@@ -1,5 +1,5 @@
 # List 
-## 1. list collenction can contain same elements but in differnet index
+list collenction can contain same elements but in differnet index
 ```py
 list1 = [123,321,123,'a','b', [1,2,3]]
 """
@@ -8,7 +8,7 @@ int 123 stays in index[0] and [2]
 list [1,2,3] in index[5]
 """
 ```
-## 2. To Get Access and Change items
+## 1. To Get Access and Change items
 ```py
 list1 = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
 #We are getting access to items by Index, and that is the way to change them. Index starts at 0 till infinity
@@ -31,14 +31,14 @@ if "apple" in thislist:
   print("Yes, 'apple' is in the fruits list") #Output: True
 ```
 
-### 2.1 Negative loop search
+### 1.1 Negative loop search
 
 ```py
 thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
 print(thislist[-4:-1]) #output: ['orange', 'kiwi', 'melon']
 
 ```
-### 2.2 Changing by Index
+### 1.2 Changing by Index
 ```py
 thislist = ["apple", "banana", "cherry"]
 thislist[1] = "blackcurrant"
@@ -52,47 +52,51 @@ thislist = ["apple", "banana", "cherry"]
 thislist[1:3] = ["watermelon"]
 print(thislist)  #Output: ['apple', 'watermelon']
 ```
-### 2.3 Inserting
+### 1.3 Inserting
+Inserting is putting at specific index new item without removing items. In simple words it moves items and place at old index new item
 ```py
-#Inserting is putting at specific index new item without removing items. In simple words it moves items and place at old index new item
 thislist = ["apple", "banana", "cherry"]
 thislist.insert(2, "watermelon")
 print(thislist)   #Output: ['apple', 'banana', 'watermelon', 'cherry']    Size increases from 3 to 4 items
 
 ```
-## 3. Add and Remove items
+## 2. Add and Remove items
+### Adding items 2 methods
+Method 1. Add to right side of list
 ```py
-#Adding items 2 methods
-#Method 1. Add to right side of list
 mylist = [1,2,3,4]
 mylist.append(5)  # now mylist = [1,2,3,4,5]
-
-#Method 2. Inserting to some index
+```
+Method 2. Inserting to some index
+```py
 mylist = [1,2,3,4]
 mylist.insert(1, "cherry") # 1 shows index at which it would be located. Output: [1,"cherry",2,3,4]
-
-
-#Removing items 4 methods
-#Method 1. Remove by name(variable)
+```
+### Removing items 4 methods
+Method 1. Remove by name(variable)
+```py
 mylist = ["cherry", "apple", "cherry" , "banana"]
 mylist.remove("cherry) # remove func deletes first appeared variable in list Output: ["apple", "cherry", "banana"]
-
-#Method 2. Remove by Index
+```
+Method 2. Remove by Index
+```py
 mylist = [1,2,3,1,4,2,1]
 mylist.pop(3) #Deletes item at index 3
-
-#Method 3. Delete function
+```
+Method 3. Delete function
+```py
 mylist = [1,2,3,1,4,2,1]
 del mylist[3] # Deletes item under index 3
 
 del mylist   # Deletes list with all items completely
-
-#Method 4. Clear function
+```
+Method 4. Clear function
+```py
 mylist = [1,2,3,1,4,2,1]
 mylist.clear()  # Clears list from all items (leaves empty list)
 ```
 
-## 4. Loops and Comprehesions
+## 3. Loops and Comprehesions
 ```py
 fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
 newlist = []
@@ -102,42 +106,41 @@ for x in fruits:
     newlist.append(x)
 
 print(newlist)
-
-# This one can be replaced with short handed
-# newlist = [expression for item in iterable if condition == True]
-
+```
+This one can be replaced with short handed
+newlist = [expression for item in iterable if condition == True]
+```py
 fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
 newlist = [x for x in fruits if "a" in x]
 print(newlist)
 
 newlist = [x.upper() for x in fruits] # All items will have capital letters
-
 ```
 
-## 5. Sorting
+## 4. Sorting
+ist objects have a sort() method that will sort the list alphanumerically, ascending, by default:
 ```py
-# List objects have a sort() method that will sort the list alphanumerically, ascending, by default:
-
 thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
 thislist.sort()
 print(thislist)  # ['banana', 'kiwi', 'mango', 'orange', 'pineapple']
-
-# To sort descending, use the keyword argument reverse = True:
-
+```
+To sort descending, use the keyword argument reverse = True:
+```py
 thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
 thislist.sort(reverse = True)
 print(thislist) # ['pineapple', 'orange', 'mango', 'kiwi', 'banana']
-
-# Sort the list based on how close the number is to 50:
+```
+Sort the list based on how close the number is to 50:
+```py
 def myfunc(n):
   return abs(n - 50)
 
 thislist = [100, 50, 65, 82, 23]
 thislist.sort(key = myfunc)
 print(thislist) # [50, 65, 23, 82, 100]
-
-
-# By default the sort() method is case sensitive, resulting in all capital letters being sorted before lower case letters:
+```
+By default the sort() method is case sensitive, resulting in all capital letters being sorted before lower case letters:
+```py
 thislist = ["banana", "Orange", "Kiwi", "cherry"]
 thislist.sort(key = str.lower)  # this will sort lower cased before capital letters
 print(thislist)
@@ -149,7 +152,7 @@ print(thislist)   # ['cherry', 'Kiwi', 'Orange', 'banana']
 
 ```
 
-## 6. Join lists
+## 5. Join lists
 ```py
 #Joining is the easiest part. There are 3 ways to join lists without outer libraries
 list1 = [1,2,3,4]
@@ -168,7 +171,7 @@ print(list1) #output: [1,2,3,4,'cherry', 'banana','apple']
 list1.extend(list2)
 print(list1) #output: [1,2,3,4,'cherry', 'banana','apple']
 ```
-## 7. Methods
+## 6. Methods
 ```txt
 append()      Adds an element at the end of the list
 clear()       Removes all the elements from the list
@@ -193,12 +196,10 @@ mytuple = (5,6,4,3,2,1)
 mytuple.remove() # Error
 tuple(list(mytuple).remove(6))
 tuple(list(mytuple).append(7))
-"""
+```
 1. We convert tuple to list list(mytuple), lets say in short it is "converted_tuple"
 2. Then from our 'list' we remove 6 converted_tuple.remove(6) OR add 7 converted_tuple.append(7)
 3. Then we convert it again to tuple tuple(...)
-"""
-```
 # 3. Unpacking
 Unpacking here is like refering items inside of tuple to some groups
 ```py
@@ -240,11 +241,9 @@ Set items are unchangeable, but you can remove items and add new items.
 Sets cannot have two items with the same value
 ```py
 set1 = {4.3,43,12,1.2,4.3, 1.2,1.2}
-"""
-Is stored like set1 =set1 = {4.3,43,12,1.2}
-But output is always random: {43,12,1.2,4.3}, another time {12, 1.2, 4.3,43}
-"""
 ```
+set1 becomes : {4.3,43,12,1.2}
+But output is always random: {43,12,1.2,4.3}, another time {12, 1.2, 4.3,43}
 True and 1 is considered the same value so set1 = {2,3,True, 1} becomes set1 = {2,3,True) 
 False and 0 is considered the same value so set1 = {2,3,False, 0} becomes set1 = {2,3,False) 
 # 1. Access
@@ -263,7 +262,7 @@ tropical = {"pineapple", "mango", "papaya"}
 
 thisset.update(tropical) # <- means thisset was enlarged with data of tropical
 
-# This actualy helps to avoid repeating words to do a list of all existing items, like:
+# This actualy helps to avoid repeating words to do a list of all existing items, like
 fruits = {}
 national = {...}
 tropical = {...}
@@ -386,5 +385,67 @@ union()                          Return a set containing the union of sets
 update()                         Update the set with the union of this set and others
 ```
 # Dictionary( Dict)
-
-# Array
+Dictionaries store items in " keys : values " pairs
+In versions Python 3.7 and newer , dict is sorted, while in 3.6 and older dict in unsorted
+Dictionary is changeable data type, consisting of any of other data types
+Duplicates don't exist , but allowed. They will overwrite already existing values
+```py
+dict1 = {
+    "name": "Anvar", #string
+    "age": 18, #integer
+    "student": True, # boolean
+    "subjects": ["CAL1", "P1","PE1","AE1","AER","OOP1","INTRO TO IT"], # list
+    "age": 20 # integer
+}
+print(dict1)
+```
+You can also create dictionary with constructor dict()
+```py
+thisdict = dict(name = "John", age = 36, country = "Norway")
+```
+# 1. Access Items
+```py
+dict1 = {
+    "name": "Anvar",
+    "age": 18,
+    "student": True
+}
+x = dict1["name"]
+y = dict1.get("name")
+z = dict1.keys()
+w = dict1.values()
+v = dict1.items()
+```
+1. Direct output
+'x' will refer to value of 'name' key, not store it. So ,when you change it , value of 'x' will change too.
+2. Get method
+'y' will store value of 'name' key, not reger to it
+3. Keys method
+'z' will store list of keys ["name","age","student"]
+4. Values method
+'w' will store list of values ["Anvar",18,True]
+5. Items method
+'v' will store list of sub-lists of [('name','Anvar'),('age',18),('student',True)]
+# 2. Add/Update Items
+Update method ( if exist key, update it. Else add new)
+```py
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.update({"year": 2020})
+thisdict.update({"color": "red"})
+```
+Direct change ( if exist key, change it. Else add new)
+```py
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict["year"] = 2018
+thisdict["color"] = "red"
+```
+# 3. Remove Items
+# 4. Nested Dictionaries
