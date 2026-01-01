@@ -107,7 +107,7 @@ thisdict = {
 }
 thisdict.clear()
 ```
-# 4. Nested Dictionaries
+# 4. Loop Function of Dictionaries
 Print all keys by index and key() method
 ```py
 for x in thisdict:
@@ -128,4 +128,78 @@ Print both keys and values with items() method
 ```py
 for x,y in thisdict.items():
   print(f"{x} : {y}")
+```
+# 5. Copy Dictionaries
+You cannot copy a dictionary simply by typing dict2 = dict1, because: dict2 will only be a reference to dict1, and changes made in dict1 will automatically also be made in dict2
+Instead there are : copy() method and constructor dict()
+```py
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+mydict1 = thisdict.copy()
+mydict2 = dict(thisdict)
+```
+# 6. Nested Dictionaries
+```py
+child1 = {
+  "name" : "Emil",
+  "year" : 2004
+}
+child2 = {
+  "name" : "Tobias",
+  "year" : 2007
+}
+child3 = {
+  "name" : "Linus",
+  "year" : 2011
+}
+
+myfamily = {
+  "child1" : child1,
+  "child2" : child2,
+  "child3" : child3
+}
+```
+This creates myfamily dict, that contains data of 3 children( child1, child2, child3 )
+
+Getting Access to the specific data we can by method:
+main_dict["name_of_nested_dict"][name_of_key]
+```py
+Name_Of_Child2 = myfamily["child2"]["name"]
+```
+
+Get all data of nested loops we can by nested for loop and items() method
+```py
+for name_of_nested_dict, keys_of_nested_dicts in myfamily.items():
+    print(name_of_nested_dict)
+    
+    for y in keys_of_nested_dicts:
+        print(y + ':', obj[y])
+```
+With items() method: name_of_nested_dict -> becomes keys of main dict(names of sub dicts),
+keys_of_nested_dicts -> becomes values of main dict(keys of sub dicts),
+y -> becomes values of sub dicts
+```py
+#Full version of Nested Dict above
+myfamily = {
+  "child1" : {  "name" : "Emil",  "year" : 2004},
+  "child2" : {  "name" : "Tobias",  "year" : 2007},
+  "child3" : {  "name" : "Linus",  "year" : 2011}
+}
+```
+# 7. Methods
+```txt
+clear()           Removes all the elements from the dictionary
+copy()            Returns a copy of the dictionary
+fromkeys()        Returns a dictionary with the specified keys and value
+get()             Returns the value of the specified key
+items()           Returns a list containing a tuple for each key value pair
+keys()            Returns a list containing the dictionary's keys
+pop()             Removes the element with the specified key
+popitem()         Removes the last inserted key-value pair
+setdefault()      Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
+update()          Updates the dictionary with the specified key-value pairs
+values()          Returns a list of all the values in the dictionary
 ```
