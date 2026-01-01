@@ -1,1 +1,50 @@
+# Tuple
+A tuple is a collection which is ordered and unchangeable
+# 1. Access and Change of Items
+Access is same as in list, by index. We can do both positive and negative searches.
+# 2. Add and Remove Items
+Since we cannot change tuple collecton, we need to convert it to list to add or remove items by methods of list
+```py
+mytuple = (5,6,4,3,2,1)
+mytuple.remove() # Error
+tuple(list(mytuple).remove(6))
+tuple(list(mytuple).append(7))
+```
+1. We convert tuple to list list(mytuple), lets say in short it is "converted_tuple"
+2. Then from our 'list' we remove 6 converted_tuple.remove(6) OR add 7 converted_tuple.append(7)
+3. Then we convert it again to tuple tuple(...)
+# 3. Unpacking
+Unpacking here is like refering items inside of tuple to some groups
+```py
+mytuple = ('apple','watermelon','banana')
+(green, red, yellow) = mytuple
+print(green,' ',red,' ',  yellow) #Output: apple watermelon banana
 
+mytuple = ('cucumber','banana','apple','watermelon','tomato')
+(green, yellow, *red) = mytuple # Asteriks (*) means choose all other that left to category 'red'
+print(red,' ', green, ' ', yellow)
+#Output:  ['apple', 'watermelon', 'tomato'] cucumber banana
+
+mytuple = ('cucumber','banana','apple','watermelon','tomato')
+(green, *yellow, red) = mytuple # With asteriks in this position compiler refers all items between first and last elements
+print(red,' ', green, ' ', yellow)
+#Output:   tomato cucumber ['banana','apple', 'watermelon']
+```
+# 4. Join Tuples
+```py
+tuple1 = ("a", "b" , "c")
+tuple2 = (1, 2, 3)
+
+tuple3 = tuple1 + tuple2
+print(tuple3)
+```
+## OR
+```py
+tuple1 = ("a", "b" , "c")
+tuple1 = tuple1 * 2
+print(tuple1) #Output: ["a", "b" , "c","a", "b" , "c"]
+```
+# 5. Methods
+```txt
+Mostly same with list methods excluding add and remove methods
+```
