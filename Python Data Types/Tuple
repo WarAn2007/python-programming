@@ -46,5 +46,12 @@ print(tuple1) #Output: ["a", "b" , "c","a", "b" , "c"]
 ```
 # 5. Methods
 ```txt
-Mostly same with list methods excluding add and remove methods
+clear()       Removes all the elements from the list
+copy()        Returns a copy of the list
+count()       Returns the number of elements with the specified value
+index()       Returns the index of the first element with the specified value
+reverse()     Reverses the order of the tuple
+sort()        Sorts the tuple
+Operators: + and * to create another tuple but extended
+Asteriks (*) for unpacking
 ```
