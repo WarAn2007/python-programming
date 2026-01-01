@@ -427,7 +427,7 @@ v = dict1.items()
 5. Items method
 'v' will store list of sub-lists of [('name','Anvar'),('age',18),('student',True)]
 # 2. Add/Update Items
-Update method ( if exist key, update it. Else add new)
+Update method ( if exist key, updates it. Else add new)
 ```py
 thisdict = {
   "brand": "Ford",
@@ -437,7 +437,7 @@ thisdict = {
 thisdict.update({"year": 2020})
 thisdict.update({"color": "red"})
 ```
-Direct change ( if exist key, change it. Else add new)
+Direct change ( if exist key, changes it. Else add new)
 ```py
 thisdict = {
   "brand": "Ford",
@@ -448,4 +448,49 @@ thisdict["year"] = 2018
 thisdict["color"] = "red"
 ```
 # 3. Remove Items
+Method pop() through specified key
+```py
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.pop("model")
+```
+Method popitem() deletes last added key with its value 
+```py
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.pop()
+```
+'del' Method through specified key ( with [] braces )
+```py
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+del thisdict["model"]
+```
+By the way, 'del' can also delete dict itself
+```py
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+del thisdict # Deletes dict completely
+```
+Method clear() empties dict
+```py
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.clear()
+```
 # 4. Nested Dictionaries
